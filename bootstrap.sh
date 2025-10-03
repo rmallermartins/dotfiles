@@ -23,14 +23,16 @@ spin() {
 
 gum confirm "Init setup?" || exit 1
 
-spin "Updating system" sudo apt update && sudo apt upgrade -y
-text "System updated."
+sudo apt update && sudo apt upgrade -y
+text ">> System updated"
 
+xargs -a packages.txt sudo apt install -y
+./scripts/install-packages.sh
+text ">> Packages installed"
 
-spin "Installing packages from packages.txt" xargs -a packages.txt sudo apt install -y
-text "Packages installed."
+stow -R .
+text ">> Applied dotfiles"
 
-spin "Applying dotfiles with Stow" stow -R .
-text "Applied dotfiles."
+mkdir -p ~/workspace
 
 title "Finished setup!"

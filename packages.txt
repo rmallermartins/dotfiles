@@ -7,3 +7,5 @@ tmux
 stow
 build-essential
 gum
+gpg
+apt-transport-https
