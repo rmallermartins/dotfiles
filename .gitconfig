@@ -1,0 +1,10 @@
+[user]
+    name = Rodrigo Maller Martins
+    email = rmallermartins@gmail.com
+[init]
+    defaultBranch = main
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
